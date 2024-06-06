@@ -1,19 +1,30 @@
+import { useState } from "react";
 function Input_Validation() {
+  const[num ,setNum] =useState(" ");
+
+  function handleInput(e) {
+ setNum(e.target.value);
+}
+const [numtwo, setNumtwo] = useState(" ");
+function string_Check(){
+  {num.startsWith("py") || num.startsWith("Py")? setNumtwo(num):setNumtwo("py" +num) ||setNumtwo("PY"+num) };
+}
+ 
   return (
     <>
       {/*<!-----------------------------Question no#01  ----------------->*/}
       <hr />
       <div className="parent1">
         <h1 style={{color :"Blue", marginLeft: "10vw"}}>Question No#01</h1>
-        <input type="text" placeholder="Enter your string here" id="field" />
+        <input type="text" placeholder="Enter your string here" onChange={handleInput} />
         <br />
-        <button onclick="string_check()">Click to check</button>
-        <p id="para1"></p>
+        <button onClick={string_Check}>Click to check</button>
+        <p>{numtwo}</p>
       </div>
       <hr />
       {/*<!-----------------------------Question no#02  ----------------->*/}
 
-      <div className="parent2">
+      {/* <div className="parent2">
         <h1 className="main-heading">Question No#02</h1>
         <input type="text" placeholder="Enter your string here" id="remove" />
         <br />
@@ -22,7 +33,7 @@ function Input_Validation() {
         <button onclick="remove_letter()">Click to remove</button>
         <p id="result"></p>
       </div>
-      <hr />
+      <hr /> */}
       {/*<!-----------------------------Question no#03  ----------------->*/}
 
       <div className="parent3">
